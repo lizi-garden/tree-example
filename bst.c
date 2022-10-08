@@ -1,8 +1,9 @@
 #include "bst.h"
+#include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-BST* Init(int data)
+BST* Init_bst(int data)
 {
     BST *root = NULL;
 
@@ -15,7 +16,7 @@ BST* Init(int data)
     return root;
 }
 
-bool Add(BST *root, int data)
+bool Add_bst(BST *root, int data)
 {
     BST *new = NULL;
     BST *pnode = root;
@@ -61,20 +62,20 @@ bool Add(BST *root, int data)
     return true;
 }
 
-bool Delete(BST *root, int data)
+bool Delete_bst(BST *root, int data)
 {
     return true;
 }
 
-void Show(BST *root)
+void Show_bst(BST *root)
 {
     static int count = 1;
 
     if(NULL != root->right)
-        Show(root->right);
+        Show_bst(root->right);
 
     if(NULL != root->left)
-        Show(root->left);
+        Show_bst(root->left);
 
     if(NULL != root)
     {
@@ -85,13 +86,13 @@ void Show(BST *root)
     return;
 }
 
-void Free(BST *root)
+void Free_bst(BST *root)
 {
     if(NULL != root->right)
-        Free(root->right);
+        Free_bst(root->right);
 
     if(NULL != root->left)
-        Free(root->left);
+        Free_bst(root->left);
     
     free(root);
     root = NULL;

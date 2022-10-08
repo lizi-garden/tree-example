@@ -11,14 +11,14 @@ typedef struct bst
     struct bst *right;
 } BST;
 
-BST* Init(int data);
+BST* Init_bst(int data);
 
-bool Add(BST *root, int data);
+bool Add_bst(BST *root, int data);
 
-void Show(BST *root);
+void Show_bst(BST *root);
 
-bool Delete(BST *root, int data);
+bool Delete_bst(BST *root, int data);
 
-void Free(BST *root);
+void Free_bst(BST *root);
 
 #endif
